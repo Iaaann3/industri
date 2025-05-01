@@ -1,6 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\KategoriController;
+use App\Http\Controllers\PembuatController;
+use App\Http\Controllers\BeritaController;
+use App\Http\Controllers\CommentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,5 +22,10 @@ Route::get('/', function () {
 });
 
 Auth::routes();
+Route::resource('kategori', KategoriController::class);
+Route::resource('pembuat', PembuatController::class);
+Route::resource('berita', BeritaController::class);
+Route::resource('comment', CommentController::class);
+
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
